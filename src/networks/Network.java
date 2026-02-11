@@ -1,3 +1,5 @@
+package networks;
+
 /**
  * Base class of social network.
  */
