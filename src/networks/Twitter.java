@@ -1,40 +1,39 @@
 package networks;
 
-public class Facebook extends Network {
-    public Facebook(String userName, String password) {
+/**
+ * Class of social network
+ */
+public class Twitter extends Network {
+
+    public Twitter(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
 
-    @Override
-    boolean logIn(String userName, String password) {
+    public boolean logIn(String userName, String password) {
         System.out.println("\nChecking user's parameters");
         System.out.println("Name: " + this.userName);
         System.out.print("Password: ");
-
         for (int i = 0; i < this.password.length(); i++) {
             System.out.print("*");
         }
         simulateNetworkLatency();
-        System.out.println("\n\nLogIn success on Facebook");
+        System.out.println("\n\nLogIn success on Twitter");
         return true;
     }
 
-
-    @Override
-    void logOut() {
-        System.out.println("User: '" + userName + "' was logged out from " + getClass().getSimpleName());
-    }
-
-    @Override
     public boolean sendData(byte[] data) {
         boolean messagePosted = true;
         if (messagePosted) {
-            System.out.println("Message: '" + new String(data) + "' was posted on Facebook");
+            System.out.println("Message: '" + new String(data) + "' was posted on Twitter");
             return true;
         } else {
             return false;
         }
+    }
+
+    public void logOut() {
+        System.out.println("User: '" + userName + "' was logged out from Twitter");
     }
 
     private void simulateNetworkLatency() {
@@ -50,5 +49,4 @@ public class Facebook extends Network {
             ex.printStackTrace();
         }
     }
-
 }
