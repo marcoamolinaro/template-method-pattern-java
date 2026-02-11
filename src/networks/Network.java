@@ -7,11 +7,6 @@ public abstract class Network {
 
     Network() {}
 
-    Network(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
-
     /**
      * Publish the data to whatever network.
      */
